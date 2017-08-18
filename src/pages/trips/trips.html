@@ -1,0 +1,42 @@
+<ion-header>
+ <ion-navbar >
+    <ion-title ><img src="../assets/images/ba.png" width="50px">Bills Aggregator</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="card-background-page" >
+  <h2>All your Trips</h2>
+  
+  <button  round ion-button class="googleplus" (click)="addtrip();"> Add a trip</button>
+
+<ion-row>
+  <ion-col>
+  <p>
+   Oops. You haven't taken any..add it now :)
+  </p>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col>
+<ion-card>
+    
+    <div class="card-title">Australia</div>
+    <div class="card-subtitle">41 Bills</div>
+  </ion-card>
+  </ion-col>
+  <ion-col>
+  <ion-card>
+   
+    <div class="card-title">USA</div>
+    <div class="card-subtitle">64 Bills</div>
+  </ion-card>
+  </ion-col>
+  <ion-col>
+  <ion-card>
+    
+    <div class="card-title">San Francisco</div>
+    <div class="card-subtitle">72 Bills</div>
+  </ion-card>
+  </ion-col>
+</ion-row>
+</ion-content>

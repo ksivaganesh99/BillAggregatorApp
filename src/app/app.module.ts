@@ -5,21 +5,25 @@ import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { TripsPage } from '../pages/trips/trips';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
+import { AddTripPage } from '../pages/addtrip/addtrip';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
+    TripsPage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    AddTripPage
   ],
   imports: [
     BrowserModule,
@@ -30,9 +34,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
+    TripsPage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    AddTripPage
   ],
   providers: [
     StatusBar,
