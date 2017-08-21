@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { TripsPage } from '../trips/trips';
+import { MainTabPage } from '../maintab/maintab';
 
 /**
  * Generated class for the LoginPage page.
@@ -23,6 +25,6 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   Login(){
-    this.navCtrl.push(TabsPage);
+    this.navCtrl.setRoot(MainTabPage);
   }
 }

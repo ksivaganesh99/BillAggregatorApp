@@ -1,13 +1,20 @@
 <ion-header>
  <ion-navbar >
-    <ion-title ><img src="../assets/images/ba.png" width="50px">Bills Aggregator</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>gfd
+    </button>fghf
+    <ion-title >fgf<img src="../assets/images/ba.png" >
+    <button ion-button icon-only float-right round  style="font-size:11px;background-color:#dd4c3b;" (click)="logout();">
+  <ion-icon name="power"></ion-icon>
+</button>
+</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="card-background-page" >
-  <h2>All your Trips</h2>
+  <h2>All your Trips  <button  round ion-button class="googleplus" float-right (click)="addtrip();"> Add a new trip</button></h2>
   
-  <button  round ion-button class="googleplus" (click)="addtrip();"> Add a trip</button>
+ 
 
 <ion-row>
   <ion-col>
@@ -17,57 +24,57 @@
   </ion-col>
 </ion-row>
 <ion-row>
-  <ion-col>
-<ion-card>
+  <ion-col col-12 col-sm-6 col-md-6 col-lg-3>
+<ion-card (click)="billspage(name);">
     
-    <div class="card-title">Australia</div>
+    <div class="card-title"  >{{ name }}</div>
     <div class="card-subtitle">41 Bills</div>
   </ion-card>
   </ion-col>
-  <ion-col>
-  <ion-card>
+<ion-col col-12 col-sm-6 col-md-6 col-lg-3>
+ <ion-card (click)="billspage(name);">
    
     <div class="card-title">USA</div>
     <div class="card-subtitle">64 Bills</div>
   </ion-card>
   </ion-col>
-  <ion-col>
-  <ion-card>
+<ion-col col-12 col-sm-6 col-md-6 col-lg-3>
+ <ion-card (click)="billspage(name);">
     
     <div class="card-title">San Francisco</div>
     <div class="card-subtitle">72 Bills</div>
   </ion-card>
   </ion-col>
-  <ion-col>
-  <ion-card>
+ <ion-col col-12 col-sm-6 col-md-6 col-lg-3>
+  <ion-card (click)="billspage(name);">
     
     <div class="card-title">San Francisco</div>
     <div class="card-subtitle">72 Bills</div>
   </ion-card>
   </ion-col>
-  <ion-col>
-  <ion-card>
+<ion-col col-12 col-sm-6 col-md-6 col-lg-3>
+ <ion-card (click)="billspage(name);">
+    
+    <div class="card-title">San Francisco</div>
+    <div class="card-subtitle">72 Bills</div>
+  </ion-card>
+</ion-col>
+<ion-col col-12 col-sm-6 col-md-6 col-lg-3>
+ <ion-card (click)="billspage(name);">
     
     <div class="card-title">San Francisco</div>
     <div class="card-subtitle">72 Bills</div>
   </ion-card>
   </ion-col>
-  <ion-col>
-  <ion-card>
+<ion-col col-12 col-sm-6 col-md-6 col-lg-3>
+  <ion-card (click)="billspage(name);">
     
     <div class="card-title">San Francisco</div>
     <div class="card-subtitle">72 Bills</div>
   </ion-card>
   </ion-col>
-  <ion-col>
-  <ion-card>
-    
-    <div class="card-title">San Francisco</div>
-    <div class="card-subtitle">72 Bills</div>
-  </ion-card>
-  </ion-col>
-  <ion-col>
-  <ion-card>
+<ion-col col-12 col-sm-6 col-md-6 col-lg-3>
+ <ion-card (click)="billspage(name);">
     
     <div class="card-title">San Francisco</div>
     <div class="card-subtitle">72 Bills</div>

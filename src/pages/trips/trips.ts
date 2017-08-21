@@ -1,20 +1,32 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController , App } from 'ionic-angular';
 import { AddTripPage } from '../addtrip/addtrip';
-
+import { LoginPage } from '../login/login';
+import { BillsPage } from '../bills/bills';
+ 
 @Component({
   selector: 'page-trips',
   templateUrl: 'trips.html'
 })
 export class TripsPage {
-
-  constructor(public navCtrl: NavController) {
+ public name: string = "Australia Trip";
+  constructor(public navCtrl: NavController , private _app: App) {
 
   }
 
   addtrip(){
    
     this.navCtrl.push(AddTripPage);
+  }
+  logout(){
+    const root = this._app.getRootNav();
+    root.popToRoot();
+    //this.navCtrl.setRoot(LoginPage);
+    //window.location.reload();
+   // this.navCtrl.push(LoginPage);
+  }
+  billspage(sample){
+  this.navCtrl.push(BillsPage,{ name : sample});
   }
 
 }
