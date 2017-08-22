@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController , App} from 'ionic-angular';
 import { TripsPage } from '../trips/trips';
-
+import { LoginPage } from '../login/login';
 
 
 @Component({
@@ -14,12 +14,20 @@ export class MainTabPage {
   tab2Root = TripsPage;
   tab3Root = TripsPage;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private _app : App) {
 
   }
   openPage(page){
- this.navCtrl.setRoot(page);
+ this._app.getActiveNav().setRoot(page);
 
+  }
+   logout(){
+    //const root = this._app.getRootNavById('root-nav');
+   // root.
+    this.navCtrl.setRoot(LoginPage);
+    //this.navCtrl.setRoot(LoginPage);
+    //window.location.reload();
+   // this.navCtrl.push(LoginPage);
   }
   
 }

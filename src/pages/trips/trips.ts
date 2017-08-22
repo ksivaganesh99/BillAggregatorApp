@@ -18,13 +18,7 @@ export class TripsPage {
    
     this.navCtrl.push(AddTripPage);
   }
-  logout(){
-    const root = this._app.getRootNav();
-    root.popToRoot();
-    //this.navCtrl.setRoot(LoginPage);
-    //window.location.reload();
-   // this.navCtrl.push(LoginPage);
-  }
+ 
   billspage(sample){
   this.navCtrl.push(BillsPage,{ name : sample});
   }

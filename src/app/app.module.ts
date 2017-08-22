@@ -10,8 +10,6 @@ import { LoginPage } from '../pages/login/login';
 import { AddTripPage } from '../pages/addtrip/addtrip';
 import { BillsPage } from '../pages/bills/bills';
 import { AddBillPage } from '../pages/addbill/addbill';
-import { AddBillUploadPage } from '../pages/addbillupload/addbillupload';
-import { AddBillPhotoPage } from '../pages/addbillphoto/addbillphoto';
 import { MainTabPage } from '../pages/maintab/maintab';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,8 +25,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AddTripPage,
     BillsPage,
     AddBillPage,
-    AddBillUploadPage,
-    AddBillPhotoPage,
     MainTabPage
   ],
   imports: [
@@ -44,8 +40,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AddTripPage,
     BillsPage,
     AddBillPage,
-    AddBillUploadPage,
-    AddBillPhotoPage,
     MainTabPage
   ],
   providers: [

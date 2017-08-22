@@ -6,9 +6,9 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'addbill.html'
 })
 export class AddBillPage {
-
+  public selected:string;
   constructor(public navCtrl: NavController) {
-
+   this.selected = "addbill";
   }
 
 }
