@@ -11,7 +11,7 @@ import { BillsPage } from '../bills/bills';
 export class TripsPage {
  public name: string = "Australia Trip";
   constructor(public navCtrl: NavController , private _app: App) {
-
+   
   }
 
   addtrip(){

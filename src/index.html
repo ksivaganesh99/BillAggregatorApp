@@ -2,15 +2,17 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>Ionic App</title>
+  <title>Bills Aggregator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
-
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#4e8ef7">
-
+  <meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id"
+	content="850213730550-6v8gm0t1ai81r5dll04oc6rof8j4m682.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 
@@ -42,4 +44,21 @@
   <script src="build/main.js"></script>
 
 </body>
+<script>
+  function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        alert();
+        	console.log(googleUser);
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());      
+        console.log("Email: " + profile.getEmail());
+        // The ID token you need to pass to your backend:
+        	console.log("aksdhk"+JSON.stringify(googleUser));
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+        //signinCallback(id_token);
+      };
+  </script>
 </html>
