@@ -1,0 +1,192 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "This is an API spec of Bills Aggregator",
+    "version" : "1.0.0",
+    "title" : "Bills Aggregator API",
+    "contact" : {
+      "email" : "siva.karri@tcs.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags" : [ {
+    "name" : "admins",
+    "description" : "Secured Admin-only calls"
+  }, {
+    "name" : "developers",
+    "description" : "Operations available to regular developers"
+  } ],
+  "paths" : {
+    "/trips" : {
+      "get" : {
+        "tags" : [ "developers" ],
+        "summary" : "fetch all trips based on userid",
+        "operationId" : "getTripsByUserId",
+        "description" : "By passing user Id we would be able to fetch trips of that user\n",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "pass an userid",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "User trips found",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/TripDetails"
+              }
+            }
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "developers" ],
+        "summary" : "add a trip",
+        "operationId" : "addATripByUserId",
+        "description" : "Add a new trip",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "tripItem",
+          "description" : "Trip item to add",
+          "schema" : {
+            "$ref" : "#/definitions/TripDetails"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Trip created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing Trip already exists"
+          }
+        }
+      }
+    },
+    "/bills" : {
+      "get" : {
+        "tags" : [ "developers" ],
+        "summary" : "Fetch all bills based on user id and trip id",
+        "operationId" : "getBillsByTripId",
+        "description" : "By passing user id and trip id we would be able to fetch the bill details",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "pass an userid",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "query",
+          "name" : "tripid",
+          "description" : "pass a tripid",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "User bills found",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Bills"
+              }
+            }
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "developers" ],
+        "summary" : "add a bill",
+        "operationId" : "addABillByUserId",
+        "description" : "Add a new trip",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "billItem",
+          "description" : "Bill item to add",
+          "schema" : {
+            "$ref" : "#/definitions/Bills"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Bill created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "TripDetails" : {
+      "type" : "object",
+      "required" : [ "id", "name", "bills", "tripDate" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+        },
+        "name" : {
+          "type" : "string",
+          "example" : "Australia tour"
+        },
+        "tripDate" : {
+          "type" : "string",
+          "format" : "int32",
+          "example" : "2016-08-29T09:12:33.001Z"
+        },
+        "bills" : {
+          "$ref" : "#/definitions/Bills"
+        }
+      }
+    },
+    "Bills" : {
+      "required" : [ "name" ],
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "example" : "ACME Corporation"
+        },
+        "billUrl" : {
+          "type" : "string",
+          "format" : "url",
+          "example" : "https://www.acme-corp.com"
+        },
+        "billAmount" : {
+          "type" : "string",
+          "example" : "408-867-5309"
+        },
+        "billDate" : {
+          "type" : "string",
+          "format" : "int32",
+          "example" : "2016-08-29T09:12:33.001Z"
+        }
+      }
+    }
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/ksivaganesh99/BillsAggregator/1.0.0",
+  "schemes" : [ "https" ]
+}
