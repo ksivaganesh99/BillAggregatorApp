@@ -158,7 +158,10 @@
           "example" : "2016-08-29T09:12:33.001Z"
         },
         "bills" : {
-          "$ref" : "#/definitions/Bills"
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Bills"
+          }
         }
       }
     },
