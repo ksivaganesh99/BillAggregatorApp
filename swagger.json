@@ -124,7 +124,7 @@
           "name" : "billItem",
           "description" : "Bill item to add",
           "schema" : {
-            "$ref" : "#/definitions/Bills"
+            "$ref" : "#/definitions/BillPost"
           }
         } ],
         "responses" : {
@@ -153,6 +153,26 @@
           "example" : "Australia tour"
         },
         "trip_date" : {
+          "type" : "string",
+          "format" : "int32",
+          "example" : "2016-08-29T09:12:33.001Z"
+        }
+      }
+    },
+    "BillPost" : {
+      "type" : "object",
+      "required" : [ "trip_id", "bill_name", "bill_date" ],
+      "properties" : {
+        "trip_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+        },
+        "bill_name" : {
+          "type" : "string",
+          "example" : "Australia tour"
+        },
+        "bill_date" : {
           "type" : "string",
           "format" : "int32",
           "example" : "2016-08-29T09:12:33.001Z"
