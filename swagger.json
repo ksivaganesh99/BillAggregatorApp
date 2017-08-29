@@ -61,7 +61,7 @@
           "name" : "tripItem",
           "description" : "Trip item to add",
           "schema" : {
-            "$ref" : "#/definitions/TripDetails"
+            "$ref" : "#/definitions/TripPost"
           }
         } ],
         "responses" : {
@@ -139,6 +139,26 @@
     }
   },
   "definitions" : {
+    "TripPost" : {
+      "type" : "object",
+      "required" : [ "user_id", "trip_name", "trip_date" ],
+      "properties" : {
+        "user_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+        },
+        "trip_name" : {
+          "type" : "string",
+          "example" : "Australia tour"
+        },
+        "trip_date" : {
+          "type" : "string",
+          "format" : "int32",
+          "example" : "2016-08-29T09:12:33.001Z"
+        }
+      }
+    },
     "TripDetails" : {
       "type" : "object",
       "required" : [ "trip_id", "trip_name", "bills", "trip_date" ],
