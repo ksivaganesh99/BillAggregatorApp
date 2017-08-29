@@ -1,6 +1,7 @@
 <ion-header>
  <ion-navbar >
     <button ion-button  menuToggle right>
+      Hi {{ loggedname }}
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title><img src="../assets/images/ba.png" >
@@ -15,68 +16,20 @@
  
 
 <ion-row>
-  <ion-col>
+  <ion-col [hidden]="tripdata">
   <p>
    Oops. You haven't taken any..add it now :)
   </p>
   </ion-col>
 </ion-row>
 <ion-row>
-  <ion-col col-12 col-sm-6 col-md-6 col-lg-3>
+  <ion-col col-12 col-sm-6 col-md-6 col-lg-3 *ngFor="let trip of tripdata?.Items">
 <ion-card (click)="billspage(name);">
     
-    <div class="card-title"  >{{ name }}</div>
+    <div class="card-title"  >{{ trip.trip_name }}</div>
     <div class="card-subtitle">41 Bills</div>
   </ion-card>
   </ion-col>
-<ion-col col-12 col-sm-6 col-md-6 col-lg-3>
- <ion-card (click)="billspage(name);">
-   
-    <div class="card-title">USA</div>
-    <div class="card-subtitle">64 Bills</div>
-  </ion-card>
-  </ion-col>
-<ion-col col-12 col-sm-6 col-md-6 col-lg-3>
- <ion-card (click)="billspage(name);">
-    
-    <div class="card-title">San Francisco</div>
-    <div class="card-subtitle">72 Bills</div>
-  </ion-card>
-  </ion-col>
- <ion-col col-12 col-sm-6 col-md-6 col-lg-3>
-  <ion-card (click)="billspage(name);">
-    
-    <div class="card-title">San Francisco</div>
-    <div class="card-subtitle">72 Bills</div>
-  </ion-card>
-  </ion-col>
-<ion-col col-12 col-sm-6 col-md-6 col-lg-3>
- <ion-card (click)="billspage(name);">
-    
-    <div class="card-title">San Francisco</div>
-    <div class="card-subtitle">72 Bills</div>
-  </ion-card>
-</ion-col>
-<ion-col col-12 col-sm-6 col-md-6 col-lg-3>
- <ion-card (click)="billspage(name);">
-    
-    <div class="card-title">San Francisco</div>
-    <div class="card-subtitle">72 Bills</div>
-  </ion-card>
-  </ion-col>
-<ion-col col-12 col-sm-6 col-md-6 col-lg-3>
-  <ion-card (click)="billspage(name);">
-    
-    <div class="card-title">San Francisco</div>
-    <div class="card-subtitle">72 Bills</div>
-  </ion-card>
-  </ion-col>
-<ion-col col-12 col-sm-6 col-md-6 col-lg-3>
- <ion-card (click)="billspage(name);">
-    
-    <div class="card-title">San Francisco</div>
-    <div class="card-subtitle">72 Bills</div>
-  </ion-card>
-  </ion-col>
+
 </ion-row>
 </ion-content>

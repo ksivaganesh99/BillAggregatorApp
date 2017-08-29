@@ -2,6 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicStorageModule } from '@ionic/storage';
 import { IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
+
+import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 
 
@@ -12,8 +14,10 @@ import { AddTripPage } from '../pages/addtrip/addtrip';
 import { BillsPage } from '../pages/bills/bills';
 import { AddBillPage } from '../pages/addbill/addbill';
 import { MainTabPage } from '../pages/maintab/maintab';
+import { RegisterPage } from '../pages/register/register';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ApiProvider } from '../providers/api-provider';
 
 
 
@@ -26,9 +30,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AddTripPage,
     BillsPage,
     AddBillPage,
-    MainTabPage
+    MainTabPage,
+    RegisterPage
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
@@ -42,12 +48,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AddTripPage,
     BillsPage,
     AddBillPage,
-    MainTabPage
+    MainTabPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ApiProvider
+    
   ]
 })
 export class AppModule {}

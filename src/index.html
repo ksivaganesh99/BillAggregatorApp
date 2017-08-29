@@ -9,21 +9,20 @@
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#4e8ef7">
-  <meta name="google-signin-scope" content="profile email">
-<meta name="google-signin-client_id"
-	content="850213730550-6v8gm0t1ai81r5dll04oc6rof8j4m682.apps.googleusercontent.com">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+ <script src="https://apis.google.com/js/api:client.js"></script>
+ <script src="assets/libs/aws-cognito-sdk.min.js"></script>
+<script src="assets/libs/amazon-cognito-identity.min.js"></script>
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 
-  <!-- un-comment this code to enable service worker
+  <!-- un-comment this code to enable service worker-->
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
         .then(() => console.log('service worker installed'))
         .catch(err => console.error('Error', err));
     }
-  </script>-->
+  </script>
 
   <link href="build/main.css" rel="stylesheet">
 
@@ -45,7 +44,7 @@
 
 </body>
 <script>
-  function onSignIn(googleUser) {
+  /*function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         alert();
         	console.log(googleUser);
@@ -59,6 +58,7 @@
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
         //signinCallback(id_token);
-      };
+      };*/
+
   </script>
 </html>

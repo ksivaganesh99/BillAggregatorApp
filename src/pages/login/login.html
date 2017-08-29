@@ -17,39 +17,40 @@
 
 <ion-list>
   <ion-grid>
+    <form [formGroup]="myForm">
     <ion-row align-items-center >
     <ion-col offset-md-4 col-md-4 offset-lg-4 col-lg-4>
   <ion-item>
-      <ion-label floating>Username</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label floating >Username</ion-label>
+      <ion-input type="text" formControlName="username" [(ngModel)]="username" required></ion-input>
   </ion-item>
     </ion-col>
     </ion-row>
    <ion-row align-items-center >
     <ion-col offset-md-4 col-md-4  offset-lg-4 col-lg-4>
   <ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-label floating >Password</ion-label>
+      <ion-input type="password"  formControlName="password" [(ngModel)]="password" required></ion-input>
   </ion-item>
     </ion-col>
    </ion-row>
     <ion-row align-items-center >
     <ion-col offset-xs-4 col-xs-4 offset-md-4 col-md-4 offset-lg-4 col-lg-4 >
-      <button ion-button  full round (click)="Login();"> Login</button>
-       <span float-right> Not Registered?<a> Register </a></span>
+      <button ion-button  full round (click)="Login();" [disabled]="!myForm.valid"> Login</button>
+       <span float-right> Not Registered?<a (click)="Register();"> Register </a></span>
     </ion-col>
     </ion-row >
     <ion-row align-items-start>
-   <ion-col offset-md-4 col-xs-3 offset-md-4 col-md-3 offset-lg-4 col-lg-3 > <button ion-fab  class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" class="googleplus"><ion-icon name="logo-googleplus"></ion-icon></button></ion-col>
+   <ion-col offset-md-4 col-xs-3 offset-md-4 col-md-3 offset-lg-4 col-lg-3 > <button ion-fab  id="customBtn" class="googleplus"><ion-icon name="logo-googleplus"></ion-icon></button></ion-col>
    <ion-col  col-md-1  col-lg-1> <button ion-fab float-right class="facebook"><ion-icon name="logo-facebook"></ion-icon></button></ion-col>
-   <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+   <div id="name"></div>
    
     </ion-row>
     
     <ion-row align-items-center>
-   <ion-col offset-md-4 col-md-4  offset-lg-4 col-lg-4 text-center><img src="../assets/images/globe.png" width="300px"></ion-col>
+   <ion-col offset-md-4 col-md-4  offset-lg-4 col-lg-4 text-center><img src="../assets/images/globe.png" width="200px"></ion-col>
     </ion-row>
-    
+    </form>
     
     
   </ion-grid>

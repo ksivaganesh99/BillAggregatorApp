@@ -1,4 +1,5 @@
-page-login ion-content{
+page-login {
+    ion-content{
 background-image: url('../assets/images/BillAggregator.png');
 
 background-repeat: repeat;
@@ -16,4 +17,8 @@ page-login ion-content img{
 }
 .facebook{
     background-color:#3a579d;
+}
+a:hover{
+        cursor:pointer;
+    }
 }

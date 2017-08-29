@@ -16,7 +16,7 @@
     <ion-col offset-md-4 col-md-4 offset-lg-4 col-lg-4>
   <ion-item>
       <ion-label floating>Name your trip</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="tripname"></ion-input>
   </ion-item>
     </ion-col>
     </ion-row>
@@ -24,7 +24,7 @@
     <ion-col offset-md-4 col-md-4  offset-lg-4 col-lg-4>
   <ion-item>
       <ion-label floating>Start Date:</ion-label>
-      <ion-input type="date"></ion-input>
+      <ion-input type="date" [(ngModel)]="tripdate"></ion-input>
   </ion-item>
     </ion-col>
    </ion-row>
