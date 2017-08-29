@@ -141,18 +141,18 @@
   "definitions" : {
     "TripDetails" : {
       "type" : "object",
-      "required" : [ "id", "name", "bills", "tripDate" ],
+      "required" : [ "trip_id", "trip_name", "bills", "trip_date" ],
       "properties" : {
-        "id" : {
+        "trip_id" : {
           "type" : "string",
           "format" : "uuid",
           "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
         },
-        "name" : {
+        "trip_name" : {
           "type" : "string",
           "example" : "Australia tour"
         },
-        "tripDate" : {
+        "trip_date" : {
           "type" : "string",
           "format" : "int32",
           "example" : "2016-08-29T09:12:33.001Z"
@@ -163,22 +163,26 @@
       }
     },
     "Bills" : {
-      "required" : [ "name" ],
+      "required" : [ "bill_name" ],
       "properties" : {
-        "name" : {
+        "bill_name" : {
           "type" : "string",
           "example" : "ACME Corporation"
         },
-        "billUrl" : {
+        "bill_id" : {
+          "type" : "string",
+          "example" : "asdfas23342"
+        },
+        "bill_Url" : {
           "type" : "string",
           "format" : "url",
           "example" : "https://www.acme-corp.com"
         },
-        "billAmount" : {
+        "bill_amount" : {
           "type" : "string",
           "example" : "408-867-5309"
         },
-        "billDate" : {
+        "bill_date" : {
           "type" : "string",
           "format" : "int32",
           "example" : "2016-08-29T09:12:33.001Z"
