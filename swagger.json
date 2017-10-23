@@ -66,7 +66,13 @@
         } ],
         "responses" : {
           "201" : {
-            "description" : "Trip created"
+            "description" : "Trip created",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/TripDetails"
+              }
+            }
           },
           "400" : {
             "description" : "invalid input, object invalid"
